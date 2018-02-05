@@ -9,4 +9,14 @@ public class Validator {
 
         return 0;
     }
+
+    static boolean length(String password) {
+
+        return false;
+    }
+
+    static boolean password(String password) {
+
+        return false;
+    }
 }
