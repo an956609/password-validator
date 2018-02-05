@@ -15,9 +15,15 @@ public class ValidatorTest {
         assertFalse(length("a"));
     }
 
+    @Test
     public void passwordTest() {
         assertFalse(password("password"));
         assertFalse(password("PassWord"));
         assertTrue(password("aaaaaaaaaaaa"));
+    }
+
+    @Test
+    public void validateTest() {
+        assertEquals(2,validate("paaaaaassssssword"));
     }
 }
