@@ -14,6 +14,9 @@ public class Validator {
         int passed = 0;
         if(lengthEnough(password)) passed++;
         if(wordNotPassword(password)) passed++;
+        if(alphaNumeric(password)) passed++;
+        if(hasSpecialChar(password)) passed++;
+        if(hasUpperAndLower(password)) passed++;
         return passed;
     }
 
