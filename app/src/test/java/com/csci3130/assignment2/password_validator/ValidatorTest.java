@@ -38,6 +38,8 @@ public class ValidatorTest {
         assertTrue(alphaNumeric("abcdef7h"));
         assertTrue(alphaNumeric("0bcdefgh"));
         assertTrue(alphaNumeric("abcdefg8"));
+        assertTrue(alphaNumeric("abc_3"));
+        assertTrue(alphaNumeric("4-def"));
     }
 
     /**
