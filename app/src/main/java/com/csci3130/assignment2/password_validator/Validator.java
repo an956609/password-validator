@@ -6,17 +6,18 @@ package com.csci3130.assignment2.password_validator;
 
 public class Validator {
     public static int validate(String password) {
-
-        return 0;
+        int passed = 0;
+        if(lengthEnough(password)) passed++;
+        if(isWordPassword(password)) passed++;
+        return passed;
     }
 
-    static boolean length(String password) {
-
-        return false;
+    static boolean lengthEnough(String password) {
+        return password.length() >=8;
     }
 
-    static boolean password(String password) {
+    static boolean isWordPassword(String password) {
 
-        return false;
+        return password.compareToIgnoreCase("password") != 0;
     }
 }

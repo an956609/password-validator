@@ -10,16 +10,16 @@ import static org.junit.Assert.*;
  */
 public class ValidatorTest {
     @Test
-    public void lengthTest() {
-        assertTrue(length("aaaaaaaaaaaaaaaaaa"));
-        assertFalse(length("a"));
+    public void lengthEnoughTest() {
+        assertTrue(lengthEnough("aaaaaaaaaaaaaaaaaa"));
+        assertFalse(lengthEnough("a"));
     }
 
     @Test
-    public void passwordTest() {
-        assertFalse(password("password"));
-        assertFalse(password("PassWord"));
-        assertTrue(password("aaaaaaaaaaaa"));
+    public void isWordPasswordTest() {
+        assertFalse(isWordPassword("password"));
+        assertFalse(isWordPassword("PassWord"));
+        assertTrue(isWordPassword("aaaaaaaaaaaa"));
     }
 
     @Test
