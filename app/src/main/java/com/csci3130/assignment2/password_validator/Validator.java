@@ -18,7 +18,7 @@ public class Validator {
 
     static boolean alphaNumeric(String password) {
 
-        return false;
+        return password.matches(".*([A-Za-z][0-9]|[0-9][A-Za-z]).*");
     }
 
     static boolean hasSpecialChar(String password) {
