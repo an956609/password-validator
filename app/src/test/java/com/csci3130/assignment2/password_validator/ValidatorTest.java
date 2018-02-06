@@ -50,6 +50,7 @@ public class ValidatorTest {
         assertFalse(hasSpecialChar("abytheis298u4sj"));
         assertTrue(hasSpecialChar("ajdf_ho-rioiefa98$@"));
         assertTrue(hasSpecialChar("abc-def_gh"));
+        assertTrue(hasSpecialChar("_@$ahbor-093493"));
     }
 
     /**

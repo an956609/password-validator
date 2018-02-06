@@ -23,7 +23,7 @@ public class Validator {
 
     static boolean hasSpecialChar(String password) {
 
-        return false;
+        return password.matches(".*[^A-Za-z0-9].*");
     }
 
     static boolean hasUpperAndLower(String password) {
