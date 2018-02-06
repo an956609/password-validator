@@ -8,7 +8,7 @@ public class Validator {
     public static int validate(String password) {
         int passed = 0;
         if(lengthEnough(password)) passed++;
-        if(isWordPassword(password)) passed++;
+        if(wordNotPassword(password)) passed++;
         return passed;
     }
 
@@ -16,8 +16,22 @@ public class Validator {
         return password.length() >=8;
     }
 
-    static boolean isWordPassword(String password) {
+    static boolean alphaNumeric(String password) {
 
+        return false;
+    }
+
+    static boolean hasSpecialChar(String password) {
+
+        return false;
+    }
+
+    static boolean hasUpperAndLower(String password) {
+
+        return false;
+    }
+
+    static boolean wordNotPassword(String password) {
         return password.compareToIgnoreCase("password") != 0;
     }
 }
