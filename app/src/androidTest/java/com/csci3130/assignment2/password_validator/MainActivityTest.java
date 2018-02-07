@@ -1,5 +1,6 @@
 package com.csci3130.assignment2.password_validator;
 
+import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
@@ -27,11 +28,24 @@ public class MainActivityTest {
         mActivity.getActivity();
 
         onView(withId(R.id.password_box)).perform(typeText("password"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.validate_button)).perform(click());
         onView(withText("Strength: 1 of 5")).check(matches(isDisplayed()));
 
         onView(withId(R.id.password_box)).perform(typeText("Th!s_IsMy-P4$$Word"));
+        Espresso.closeSoftKeyboard();
         onView(withId(R.id.validate_button)).perform(click());
+        onView(withText("Strength: 5 of 5")).check(matches(isDisplayed()));
+    }
+
+    @Test
+    public void dynamicValidate() throws Exception {
+        mActivity.getActivity();
+
+        onView(withId(R.id.password_box)).perform(typeText("password"));
+        onView(withText("Strength: 1 of 5")).check(matches(isDisplayed()));
+
+        onView(withId(R.id.password_box)).perform(typeText("Th!s_IsMy-P4$$w0Rd"));
         onView(withText("Strength: 5 of 5")).check(matches(isDisplayed()));
     }
 
