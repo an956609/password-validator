@@ -5,9 +5,11 @@ package com.csci3130.assignment2.password_validator;
  */
 
 public class Validator {
+    public static int rules = 5;
+
     /**
      * Determines the strenght of the password based on a set of rules.
-     * @param password
+     * @param password password string
      * @return number of rules met by the password
      */
     public static int validate(String password) {
