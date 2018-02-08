@@ -31,6 +31,7 @@ public class MainActivityTest {
         Espresso.closeSoftKeyboard();
         onView(withId(R.id.validate_button)).perform(click());
         onView(withText("Strength: 1 of 5")).check(matches(isDisplayed()));
+        onView(withId(R.id.password_box)).perform(clearText());
 
         onView(withId(R.id.password_box)).perform(typeText("Th!s_IsMy-P4$$Word"));
         Espresso.closeSoftKeyboard();
@@ -44,6 +45,7 @@ public class MainActivityTest {
 
         onView(withId(R.id.password_box)).perform(typeText("password"));
         onView(withText("Strength: 1 of 5")).check(matches(isDisplayed()));
+        onView(withId(R.id.password_box)).perform(clearText());
 
         onView(withId(R.id.password_box)).perform(typeText("Th!s_IsMy-P4$$w0Rd"));
         onView(withText("Strength: 5 of 5")).check(matches(isDisplayed()));
